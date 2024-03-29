@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--        
+        <recod id ="picture_album_form_view" model="ir.ui.view">
+            <field name="name">picture.album.form.view</field>
+            <field name="model">picture.album</field>
+            <field name="arch" type="xml">
+                <form string="Album">
+            
+                        <group>
+                            <field name="name"/>
+                            <field name="image_ids" />
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+            
+                </form>
+            </field>
+        </recod> -->
+    
+        <!-- <record id="picture_album_tree_view " model="ir.ui.view">
+            <field name="name">picture.album.tree.view</field>
+            <field name="model">picture.album</field>
+            <field name="arch" type="xml">
+                    <tree string="Album">
+                        <field name="name"/>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                    </tree>
+            </field>
+        </record> 
+
+        <recod id ="picture_image_form_view" model="ir.ui.view">
+            <field name="name">picture.image.form.view</field>
+            <field name="model">picture.image</field>
+            <field name="arch" type="xml">
+                <form string="Image">
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                    </sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                </form>
+            </field>
+        </recod> -->
+        <!-- <record id="picture_image_tree_view " model="ir.ui.view">
+            <field name="name">picture.image.tree.view</field>
+            <field name="model">picture.image</field>
+            <field name="arch" type="xml">
+                    <tree string="Image">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </tree>
+            </field>
+        </record>  -->
+
+        <!-- <record id="album_tree_view" model="ir.ui.view"></record> -->
+    
+        <record id="picture_album_action" model="ir.actions.act_window">
+            <field name="name">Album</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">picture.album</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                No album yet!
+              </p><p>
+                Please add a new album!
+              </p>
+            </field>
+        </record>
+
+
+
+
+        <record id="picture_image_action" model="ir.actions.act_window">
+            <field name="name">Image</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="res_model">picture.image</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                No album yet!
+              </p><p>
+                Please add a new album!
+              </p>
+            </field>
+        </record>   
+
+        
+
+        <!-- SlideShow Root Menu -->
+        <menuitem id="yh_root_menu"
+        name="SlideShow"
+        sequence="85"
+        parent="website.menu_website_configuration"/>
+
+        <!-- Album Submenu -->
+        <menuitem id="yh_album"
+        name="Album"
+        sequence="1"
+        parent="yh_root_menu"
+        action="picture.picture_album_action"/>
+
+        <menuitem id="yh_image"
+        name="Image"
+        sequence="2"
+        parent="yh_root_menu"
+        action="picture.picture_image_action"/>
+     
+    </data>
+</odoo>
